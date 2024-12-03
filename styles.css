@@ -1,0 +1,266 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", serif;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left Panel */
+
+.left-panel {
+    width: 17%; /* or your desired width */
+    background-color: #fffff;
+    padding: 20px;
+    border-right: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Align the items to the left */
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+	border-bottom: 1px solid #adadad; /* Adds a grey line below the logo */
+    padding-bottom: 15px; /* Adds space between the logo and the line */
+    margin-bottom: 5px; /* Adds space between the line and the navigation */
+}
+
+/* Local Navigation Section */
+.local-nav {
+    width: 100%; /* Ensure the navigation uses the full width of its container */
+    position: sticky; /* Make the navigation stick to the viewport */
+    top: 0; /* Define the top offset when sticky (e.g., sticks to the top of the viewport) */
+    background-color: white; /* Optional: Add background color to prevent content bleed-through */
+    z-index: 10; /* Ensure it stays above other elements */
+    padding: 10px 0; /* Optional: Add padding for better visuals */
+}
+
+
+.local-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; /* Margin and padding reset for the list */
+}
+
+.local-nav .section {
+    margin-bottom: 5px; /* Adds space between sections */
+    padding: 5px 0; /* Padding between section and the grey bar */
+	border-bottom: 1px solid #adadad; /* Bottom border for each section */
+}
+
+.local-nav .last-section {
+    margin-bottom: 0; /* No margin for the last section */
+	padding: 5px 0; /* Padding between section and the grey bar */
+	border-bottom: 0;
+}
+
+.local-nav p {
+	font-weight: bold;
+}
+
+/* Links within sections */
+.local-nav .section a,
+.local-nav .last-section a {
+    display: block; /* Make the link take up the full width of the li */
+    padding: 0; /* No padding between the links */
+    text-decoration: none; /* Removes underline by default */
+    color: blue; /* Default blue color for links */
+}
+
+.local-nav .section a:hover,
+.local-nav .last-section a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+.local-nav .section a:active,
+.local-nav .last-section a:active {
+    color: purple;
+}
+
+/* Right Panel */
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Top Navigation */
+.top-navigation {
+    margin-bottom: 20px;
+}
+
+/* Global Navigation */
+.global-nav {
+    border-bottom: 2px solid #000; /* Adds a black line under the global navigation */
+    padding-bottom: 5px; /* Adds space between the global navigation and the line */
+    margin-bottom: 5px; /* Ensures some space below the line */
+}
+
+.global-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+}
+
+.global-nav li {
+    display: inline;
+}
+
+/* Add vertical bar between navigation items */
+.global-nav li:not(:last-child)::after {
+    content: "|"; /* Adds the vertical bar after each link except the last one */
+    padding-left: 7px; /* Adds space before the bar */
+}
+
+/* Breadcrumbs Section */
+.breadcrumbs {
+    width: 100%;
+    margin: 0; 
+    padding: 5px 0; /* Same padding for both pages */
+    border-bottom: 1px solid #adadad;
+    line-height: 1; /* Ensure consistent text height */
+}
+
+/* Ensure parent container styling is identical */
+body, nav {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure list items are consistent */
+.breadcrumbs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs li {
+    padding-right: 10px;
+    font-size: 16px; /* Consistent font size */
+}
+
+.breadcrumbs li:not(:last-child)::after {
+    content: "➤"; /* Add the arrow symbol after each breadcrumb except the last one */
+    padding-left: 10px; /* Adds some space between the breadcrumb and the arrow */
+}
+
+
+/* Breadrumbs and Global Styling */
+.global-nav a,
+.breadcrumbs a,
+.content a {
+    text-decoration: none; /* Removes underline by default */
+    color: blue; /* Default blue color for links */
+}
+
+.global-nav a:hover,
+.breadcrumbs a:hover,
+.content a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: blue; /* Ensure it's blue when hovered */
+}
+
+.global-nav a:active,
+.breadcrumbs a:active,
+.content a:active {
+    color: purple; /* Purple color for active link */
+}
+
+/* Main Content */
+.content h1 {
+    margin-bottom: 0px;
+}
+
+.content h2,
+.content h3,
+.content h4 {
+    margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
+.content .reference {
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+}
+
+.content .with-bar {
+    border-bottom: 1px solid #adadad; /* Adds a grey bottom border */
+    padding-bottom: 20px; /* Optional: Adds space between content and border */
+    margin-bottom: 20px; /* Optional: Adds spacing below the bar */
+}
+
+.content .reference-bar {
+	border-bottom: 1px solid #adadad;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+/* Author Image */
+.content .author-image {
+    float: right; /* Makes the image float to the right of the text */
+    margin: 0px 0px 30px 20px; /* Adds space around the image */
+    border: 1px solid #adadad; /* Adds a border around the image */
+	padding: 10px;
+    background-color: #F2F2F2; /* Optional: Adds a light background to the image */
+}
+
+.content .author-image img {
+    max-width: 200px; /* Adjusts the image size */
+    height: auto; /* Maintains the aspect ratio */
+}
+
+/* Portfolio Image */
+.content .portfolio-image {
+	float: right; /* Makes the image float to the right of the text */
+    margin: 0px 0px 30px 20px; /* Adds space around the image */
+    border: 1px solid #adadad; /* Adds a border around the image */
+	padding: 10px;
+    background-color: #F2F2F2; /* Optional: Adds a light background to the image */
+}
+
+.content .portfolio-image-center {
+	text-align: center;
+    border: 1px solid #adadad; /* Adds a border around the image */
+	padding: 10px;
+    background-color: #F2F2F2; /* Optional: Adds a light background to the image */
+}
+
+.content .portfolio-image img {
+	height: auto;
+}
+
+/* Table Styles */
+table {
+    border-collapse: collapse; /* Ensures borders are merged */
+    width: 100%; /* Full width of container */
+}
+
+table td, table th {
+    border: 1px solid #adadad; /* 1px solid border for cells */
+    padding: 8px; /* Add some padding for readability */
+    text-align: left; /* Center text for uniformity */
+}
+
+table th {
+    background-color: #F2F2F2; /* Header cell color */
+    font-weight: normal; /* Emphasize headers */
+}
+
